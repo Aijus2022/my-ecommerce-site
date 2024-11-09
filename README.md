@@ -1,1 +1,1 @@
-e-commerce website bult with Node.js 15
+e-commerce website built with Node.js 15
