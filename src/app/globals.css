@@ -1,0 +1,113 @@
+/* src/app/globals.css */
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --mint-green: #78C2AD;
+  --font-primary: 'Cormorant', serif;
+  --font-secondary: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: #fff;
+  color: #333;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--mint-green);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  z-index: 1000;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  min-height: calc(100vh - 6rem); /* Ensures footer stays at bottom */
+  padding-bottom: 3rem; /* Add space for fixed footer */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--mint-green);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Hero section styling */
+.hero {
+  position: relative;
+  background-image: url('/path-to-hero-image.jpg'); /* Replace with actual image path */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* Grid styling */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* src/app/globals.css */
+:root {
+  --mint-green: #78C2AD;
+  --font-primary: 'Cormorant Garamond', serif;
+  --font-secondary: 'Lato', sans-serif;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-primary);
+}
+/* src/app/globals.css */
+
+.cartCount {
+  background-color: #FF6B6B;   /* Red color for the badge */
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+}
