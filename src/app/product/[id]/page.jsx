@@ -1,4 +1,4 @@
-// src/app/product/[id]/page.js
+// src/app/product/[id]/page.jsx
 
 import Image from 'next/image';
 import { useCart } from '../../../context/CartContext';
@@ -6,8 +6,17 @@ import styles from './Product.module.css';
 import fs from 'fs';
 import path from 'path';
 
-export default function Product({ product }) {
+// Server-side function to fetch product data
+async function getProductData(id) {
+    const filePath = path.join(process.cwd(), 'src/data/productDetails.json');
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return data.find(item => item.id === id) || null;
+}
+
+export default async function ProductPage({ params }) {
     const { addToCart } = useCart();
+    const { id } = params;
+    const product = await getProductData(id);
 
     const handleShopNow = () => {
         addToCart(product);  // Add the product to the cart
@@ -35,23 +44,5 @@ export default function Product({ product }) {
     );
 }
 
-// Fetch product data from productDetails.json file based on the ID from the URL
-export async function getServerSideProps({ params }) {
-    const { id } = params;
-
-    // Path to your productDetails.json file
-    const filePath = path.join(process.cwd(), 'src/data/productDetails.json');
-    
-    // Read and parse the JSON file
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-
-    // Find the product based on the ID
-    const product = data.find(item => item.id === id);
-
-    // Return the product data as a prop to the component
-    return {
-        props: { product: product || null },
-    };
-}
 
 
