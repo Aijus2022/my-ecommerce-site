@@ -1,41 +1,17 @@
 // src/app/product/[id]/page.js
-"use client";  // Mark as client component to use client-side hooks
 
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useCart } from '../../../context/CartContext';
 import styles from './Product.module.css';
+import fs from 'fs';
+import path from 'path';
 
-// Sample product data (In a real app, you would fetch this from an API or database)
-const productData = [
-    {
-        id: '1',
-        title: 'Winter Warmers',
-        description: 'A delightful blend of seasonal teas, coffee, and hot chocolate.',
-        price: 25.00,
-        image: '/images/tea.jpg',
-    },
-    // Add other products here
-];
-
-export default function Product() {
-    const router = useRouter();
-    const { id } = useRouter().query;
-    const [product, setProduct] = useState(null);
+export default function Product({ product }) {
     const { addToCart } = useCart();
 
-    // Fetch product based on ID
-    useEffect(() => {
-        if (id) {
-            const foundProduct = productData.find((item) => item.id === id);
-            setProduct(foundProduct);
-        }
-    }, [id]);
-
     const handleShopNow = () => {
-        addToCart(product);          // Add the product to the cart
-        router.push('/cart');         // Redirect to the Cart page
+        addToCart(product);  // Add the product to the cart
+        window.location.href = '/cart';  // Redirect to the Cart page
     };
 
     if (!product) return <p>Loading...</p>;
@@ -58,4 +34,24 @@ export default function Product() {
         </div>
     );
 }
+
+// Fetch product data from productDetails.json file based on the ID from the URL
+export async function getServerSideProps({ params }) {
+    const { id } = params;
+
+    // Path to your productDetails.json file
+    const filePath = path.join(process.cwd(), 'src/data/productDetails.json');
+    
+    // Read and parse the JSON file
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+    // Find the product based on the ID
+    const product = data.find(item => item.id === id);
+
+    // Return the product data as a prop to the component
+    return {
+        props: { product: product || null },
+    };
+}
+
 

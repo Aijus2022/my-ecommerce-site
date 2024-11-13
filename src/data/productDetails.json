@@ -1,0 +1,114 @@
+[
+    {
+        "_id": 1,
+        "title": "Winter Warmers",
+        "description": "Seasonal teas, coffee, and hot chocolate.",
+        "price": 25.00,
+        "image": "/images/tea.jpg"
+    },
+    {
+        "_id": 2,
+        "title": "Festive Hampers",
+        "description": "Filled with holiday delights.",
+        "price": 50.00,
+        "image": "/images/giftbox.jpg"
+    },
+    {
+        "_id": 3,
+        "title": "Luxury Crackers",
+        "description": "Luxurious crackers for the Christmas table.",
+        "price": 15.00,
+        "image": "/images/crackers.jpg"
+    },
+    {
+        "_id": 4,
+        "title": "Exclusive Wines",
+        "description": "Exclusive wines for the season.",
+        "price": 75.00,
+        "image": "/images/wine-and-spirits.jpg"
+    },
+    {
+        "_id": 5,
+        "title": "Advent Calendar",
+        "description": "A festive advent calendar to count down the days.",
+        "price": 40.00,
+        "image": "/images/advent-calendar.gif"
+    },
+    {
+        "_id": 6,
+        "title": "Champagne Hamper",
+        "description": "Elegant champagne hamper for celebrations.",
+        "price": 120.00,
+        "image": "/images/champain-hamper.jpg"
+    },
+    {
+        "_id": 7,
+        "title": "Chocolate Selection",
+        "description": "Assorted chocolates for the festive season.",
+        "price": 30.00,
+        "image": "/images/chocolate.jpg"
+    },
+    {
+        "_id": 8,
+        "title": "Food Hall Specialties",
+        "description": "A variety of treats from our food hall.",
+        "price": 65.00,
+        "image": "/images/foodhall.jpg"
+    },
+    {
+        "_id": 9,
+        "title": "Home Decorations",
+        "description": "Beautiful decorations to make your home festive.",
+        "price": 45.00,
+        "image": "/images/home.jpg"
+    },
+    {
+        "_id": 10,
+        "title": "Holiday Banner",
+        "description": "Festive banner for your holiday events.",
+        "price": 20.00,
+        "image": "/images/homebanner.jpg"
+    },
+    {
+        "_id": 11,
+        "title": "Classic Hamper",
+        "description": "A nice hamper filled with classic treats.",
+        "price": 55.00,
+        "image": "/images/nice-hamper.jpg"
+    },
+    {
+        "_id": 12,
+        "title": "Tea Selection 2",
+        "description": "A special selection of teas for relaxation.",
+        "price": 18.00,
+        "image": "/images/tea-2.jpg"
+    },
+    {
+        "_id": 13,
+        "title": "Tea Selection 3",
+        "description": "A delightful collection of seasonal teas.",
+        "price": 20.00,
+        "image": "/images/tea-3.jpg"
+    },
+    {
+        "_id": 14,
+        "title": "Tea Selection 4",
+        "description": "A warm assortment of tea for the cold days.",
+        "price": 22.00,
+        "image": "/images/tea-4.jpg"
+    },
+    {
+        "_id": 15,
+        "title": "Teabox Hamper",
+        "description": "A hamper filled with fine teas and treats.",
+        "price": 60.00,
+        "image": "/images/teabox-hamper.jpg"
+    },
+    {
+        "_id": 16,
+        "title": "Fine Vine Selection",
+        "description": "Exclusive vine selection for the holidays.",
+        "price": 70.00,
+        "image": "/images/vine.jpg"
+    }
+]

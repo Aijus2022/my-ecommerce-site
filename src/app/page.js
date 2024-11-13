@@ -1,4 +1,3 @@
-// src/app/page.js
 "use client";  // Ensures this component can use client-side hooks
 
 import { useCart } from '../context/CartContext'; // Import cart context for adding items
@@ -7,11 +6,6 @@ import Link from 'next/link';
 
 export default function Home() {
     const { addToCart } = useCart(); // Access addToCart function from cart context
-
-    const handleAddToCart = (product) => {
-        addToCart(product);  // Add the product to the cart
-        alert(`${product.title} has been added to the cart!`);
-    };
 
     return (
         <div>
@@ -79,15 +73,10 @@ export default function Home() {
                             />
                             <h3 className="text-lg font-semibold text-gray-700 mt-4">{product.title}</h3>
                             <p className="text-sm text-gray-500">{product.description}</p>
-                            <Link href={product.link} className="text-teal-600 font-semibold hover:underline mt-2 block">
-                                Shop Now
+                            {/* See More link instead of Shop Now */}
+                            <Link href="/products" className="text-teal-600 font-semibold hover:underline mt-2 block">
+                                See More
                             </Link>
-                            <button 
-                                onClick={() => handleAddToCart(product)} 
-                                className="bg-mint-green text-white px-4 py-2 mt-2 rounded-lg hover:bg-teal-500 transition duration-300"
-                            >
-                                Add to Cart
-                            </button>
                         </div>
                     ))}
                 </div>
@@ -112,15 +101,10 @@ export default function Home() {
                             />
                             <h3 className="text-lg font-semibold text-gray-700 mt-4">{product.title}</h3>
                             <p className="text-sm text-gray-500">{product.description}</p>
-                            <Link href={product.link} className="text-teal-600 font-semibold hover:underline mt-2 block">
-                                Shop Now
+                            {/* See More link instead of Shop Now */}
+                            <Link href="/products" className="text-teal-600 font-semibold hover:underline mt-2 block">
+                                See More
                             </Link>
-                            <button 
-                                onClick={() => handleAddToCart(product)} 
-                                className="bg-mint-green text-white px-4 py-2 mt-2 rounded-lg hover:bg-teal-500 transition duration-300"
-                            >
-                                Add to Cart
-                            </button>
                         </div>
                     ))}
                 </div>
